@@ -3,12 +3,7 @@
 // Reason for this format is that we had problems with lost promises in
 // after hooks and the tests are an easy way to run lots of different scenarios.
 
-async function slowCall(name: string, timeoutMs: number): Promise<string> {
-  console.log(`Level ${name} started, timeout ${timeoutMs}`);
-  await new Promise((resolve) => setTimeout(resolve, timeoutMs));
-  console.log(`Level ${name} finished`);
-  return Promise.resolve(`${name}(${timeoutMs})`);
-}
+import { slowCall } from '../src/slow-method';
 
 describe('Samples of waiting for promises - no real tests', () => {
   it('Wait for two promises after each other', async () => {

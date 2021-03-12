@@ -18,7 +18,7 @@ describe('Samples of waiting for promises - no real tests', () => {
     console.log('test entry');
   });
 
-  it('messes everything up if Array.foreach is used', async () => {
+  it.skip('messes everything up if Array.foreach is used', async () => {
     console.log('test entry');
     const callsToMake = [
       { name: '1 - Array.foreach', ms: 200 },
